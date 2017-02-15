@@ -19,6 +19,7 @@
 # create VIRTUAL_HOST conflict
 @test "Try starting project1 VIRTUAL_HOST conflict" {
 	mkdir -p 'project2/.docksal'
+	touch 'project2/.docksal/docksal.env'
 	cd 'project2'
 	echo 'VIRTUAL_HOST=project1.docksal' > 'project2/.docksal/docksal.env'
 	run fin start
