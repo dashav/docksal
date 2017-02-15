@@ -6,6 +6,8 @@ mkdir -p 'project2/.docksal'
 # create project name conflict
 mkdir -p 'duplicate/project1/.docksal'
 
+ls
+
 # create VIRTUAL_HOST conflict
 echo 'VIRTUAL_HOST=project1.docksal' > 'project2/.docksal/docksal.env'
 
@@ -17,15 +19,15 @@ echo 'VIRTUAL_HOST=project1.docksal' > 'project2/.docksal/docksal.env'
 }
 
 @test "Try starting project1 duplicate" {
-	cd '..'
-	cd 'duplicate/project1'
+	pwd
+	echo $output
+	cd '../duplicate/project1'
 	run fin start
 	[ ! $status -eq 0 ]
 }
 
 @test "Try starting project1 VIRTUAL_HOST conflict" {
-	cd '../..'
-	cd 'project2'
+	cd '../../project2'
 	run fin start
 	[ ! $status -eq 0 ]
 }

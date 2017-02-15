@@ -27,8 +27,8 @@ script:
   - cd "$TRAVIS_BUILD_DIR/../test-config"
   - bats "$TRAVIS_BUILD_DIR/tests/smoke-test-config.bats"
   # Test a project workflow
-  - cd "$TRAVIS_BUILD_DIR/../drupal8"
-  - bats "$TRAVIS_BUILD_DIR/tests/smoke-test-general.bats"
+#  - cd "$TRAVIS_BUILD_DIR/../drupal8"
+#  - bats "$TRAVIS_BUILD_DIR/tests/smoke-test-general.bats"
   # Test duplicates detection
   - cd "$TRAVIS_BUILD_DIR/../test-duplicates"
   - bats "$TRAVIS_BUILD_DIR/tests/smoke-test-duplicates.bats"
